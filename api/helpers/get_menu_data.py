@@ -56,20 +56,22 @@ class GetMenuData:
                             }
                         ]
                     }
-
                     menu[menu_id]['items'].append(parsed_item)
-                else:
-                    modifier_ids = []
-                    for modifier in item['modifiers']:
-                        modifier_id = modifier['id']
-                        modifier_ids.append(modifier_id)
-                    if result['modifier_id'] not in modifier_ids:
-                        parsed_modifier = {
-                            'id': result['modifier_id'],
-                            'title': result['modifier']
-                        }
 
-                        item['modifiers'].append(parsed_modifier)
+                else:
+
+                    for item in menu[menu_id]['items']:
+                        modifier_ids = []
+                        for modifier in item['modifiers']:
+                            modifier_id = modifier['id']
+                            modifier_ids.append(modifier_id)
+                        print(modifier_ids)
+                        if result['modifier_id'] not in modifier_ids:
+                            parsed_modifier = {
+                                'id': result['modifier_id'],
+                                'title': result['modifier']
+                            }
+                            item['modifiers'].append(parsed_modifier)
 
         return list(menu.values())
 
