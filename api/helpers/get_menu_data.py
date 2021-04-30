@@ -63,7 +63,7 @@ class GetMenuData:
                     for modifier in item['modifiers']:
                         modifier_id = modifier['id']
                         modifier_ids.append(modifier_id)
-                    if result['modifier_id'] != modifier['id']:
+                    if result['modifier_id'] not in modifier_ids:
                         parsed_modifier = {
                             'id': result['modifier_id'],
                             'title': result['modifier']
