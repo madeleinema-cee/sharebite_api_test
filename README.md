@@ -31,7 +31,7 @@ python3 run.py
 
 I. Create entity:
 
-http://127.0.0.1:5000/api/menu/create?entity=item&name='food name'&description='food description'&price='price'
+http://127.0.0.1:5000/api/menu/create?entity=item&name='foodname'&description='fooddescription'&price='price'
 
 II. Get menu or an entity:
 
